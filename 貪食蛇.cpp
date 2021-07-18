@@ -13,7 +13,7 @@ void printegde();
 void end();
 
 int fx,fy;
-std::deque<int> bx={10},by={10};
+std::deque<int> bx={10},by={10};//初始蛇的位置
 int body = 1;
 
 int main() {
