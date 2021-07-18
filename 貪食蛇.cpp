@@ -17,28 +17,28 @@ std::deque<int> bx={10},by={10};
 int body = 1;
 
 int main() {
-	system("mode con cols=90 lines=30"); //³]©w¶}±Òµøµ¡¤j¤p
-	system("color 71"); //³]©w­I´º¦â©M«e´º¦â
-	system("title ³g¦Y³D v1.0"); //³]©wµøµ¡¼ÐÃD
-    int x=10,y=10;//³Dªºªì©l¦ì¸m  
-    char c=77,tmpc=77,d;//³Dªºªì©l°Ê§@¤è¦V(right)
+	system("mode con cols=90 lines=30"); //è¨­å®šé–‹å•Ÿè¦–çª—å¤§å°
+	system("color 71"); //è¨­å®šèƒŒæ™¯è‰²å’Œå‰æ™¯è‰²
+	system("title è²ªåƒè›‡ v1.0"); //è¨­å®šè¦–çª—æ¨™é¡Œ
+    int x=10,y=10;//è›‡çš„åˆå§‹ä½ç½®  
+    char c=77,tmpc=77,d;//è›‡çš„åˆå§‹å‹•ä½œæ–¹å‘(right)
 	srand( time(NULL) );
 	fx=rand()%70+5,fy=rand()%15+5;
     
     gotoxy(fx,fy);
 	printf("0");
 	printegde();
-//print¹CÀ¸µe­± 
+//printéŠæˆ²ç•«é¢ 
 	gotoxy(0,26);
-	printf("³Dªº¦ì¸m:%d-%d",x,y);
+	printf("è›‡çš„ä½ç½®:%d-%d",x,y);
 	gotoxy(0,27);
-	printf("¤ôªG¦ì¸m:%d-%d",fx,fy);
+	printf("æ°´æžœä½ç½®:%d-%d",fx,fy);
 	gotoxy(0,28);
-	printf("¥Ø«e³Dªø:%d",body);
-//print¹CÀ¸µe­±
+	printf("ç›®å‰è›‡é•·:%d",body);
+//printéŠæˆ²ç•«é¢
     
     while(1){
-    //°»´úÁä½LÅª¤J 
+    //åµæ¸¬éµç›¤è®€å…¥ 
     	if(kbhit()){
     		d = getch();
     		if(d == (-32))
@@ -117,33 +117,33 @@ int main() {
 			else if(tmpc == 77)
 				x++;
 		}
-    	testedge(x,y);//°»´úÃä¬É¦º¤` 
-    	testbody(x,y);//°»´ú¨­Åé¸I¼²¦º¤` 
-    	testfruit(x,y);//°»´ú¦³¨S¦³¦Y¨ì¤ôªG 
+    	testedge(x,y);//åµæ¸¬é‚Šç•Œæ­»äº¡ 
+    	testbody(x,y);//åµæ¸¬èº«é«”ç¢°æ’žæ­»äº¡ 
+    	testfruit(x,y);//åµæ¸¬æœ‰æ²’æœ‰åƒåˆ°æ°´æžœ 
    
 		Sleep(200);	
     	//system("cls");
 
-	//print¹CÀ¸µe­± 
+	//printéŠæˆ²ç•«é¢ 
 		gotoxy(9,26);
 		printf("     ");
 		gotoxy(9,26);
 		printf("%d-%d",x,y);		
-	//print¹CÀ¸µe­±
+	//printéŠæˆ²ç•«é¢
 	
-	//print³D 
+	//printè›‡ 
 		gotoxy(x,y);
 		printf("*");
 		gotoxy(bx[0],by[0]);
 		printf(" ");
-	//print³D
+	//printè›‡
 		
-	 //§ó·s³Dªº¦ì¸m 
+	 //æ›´æ–°è›‡çš„ä½ç½® 
 		bx.pop_front();
     	by.pop_front();
     	bx.push_back(x);
     	by.push_back(y);
-	//§ó·s³Dªº¦ì¸m
+	//æ›´æ–°è›‡çš„ä½ç½®
 	
 	gotoxy(0,29);
     }
@@ -155,8 +155,8 @@ int main() {
 
 void gotoxy(int x, int y) {
     COORD pos = {x,y};
-    HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);// Àò¨ú¼Ð·Ç¿é¥X¸Ë¸m±±¨î¥N½X
-    SetConsoleCursorPosition(hOut, pos);//¨â­Ó¤Þ¼Æ¤À§O¬O«ü©w­þ­Óµ¡Åé¡A¨ãÅé¦ì¸m
+    HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);// ç²å–æ¨™æº–è¼¸å‡ºè£ç½®æŽ§åˆ¶ä»£ç¢¼
+    SetConsoleCursorPosition(hOut, pos);//å…©å€‹å¼•æ•¸åˆ†åˆ¥æ˜¯æŒ‡å®šå“ªå€‹çª—é«”ï¼Œå…·é«”ä½ç½®
 }
 
 void testbody(int x,int y){
@@ -215,18 +215,18 @@ void testedge(int x,int y) {
 void printegde() {
 	for(int ix=78,iy=24;iy>=0;iy--){
 			gotoxy(ix,iy);
-			printf("¡½");
+			printf("â– ");
 	}
 	for(int ix=78,iy=24;ix>=0;ix-=2){
 		gotoxy(ix,iy);
-		printf("¡½");
+		printf("â– ");
 	}
 	for(int ix=0,iy=24;iy>=0;iy--){
 		gotoxy(ix,iy);
-		printf("¡½");
+		printf("â– ");
 	}
 	for(int ix=78,iy=0;ix>=0;ix-=2){
 		gotoxy(ix,iy);
-		printf("¡½");
+		printf("â– ");
 	} 	
 }
